@@ -2,10 +2,10 @@
 # Interactuar con Billeteras (Wallets)
 ## Objetivos de la Lección
 *Al final de esta lección, podrás:*
-• Explicar los monederos (wallets)
-• Instalar la extensión Phantom
-• Configurar el monedero Phantom en **Devnet**
-• Utilizar el adaptador de monederos para que los usuarios firmen transacciones.
+- Explicar los monederos (wallets)
+- Instalar la extensión Phantom
+- Configurar el monedero Phantom en **Devnet**
+- Utilizar el adaptador de monederos para que los usuarios firmen transacciones.
  
 # Terminología
 - Los **monederos** almacenan su llave privada y manejan la firma segura de transacciones
