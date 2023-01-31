@@ -117,10 +117,13 @@ export default Home
 
 
 El **WalletModalProvider** agrega funcionalidad para presentar una pantalla modal para que los usuarios puedan seleccionar qué billetera desean usar. El **WalletMultiButton** cambia el comportamiento para que coincida con el estado de conexión:
-[3.2](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/2.png)
-[3.3](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/3.png)
-[3.4](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/4.png)
-[3.5](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/5.png)
+![3.2](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/2.png)
+
+![3.3](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/3.png)
+
+![3.4](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/4.png)
+
+![3.5](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/5.png)
 
  También puedes usar componentes más granulares si necesitas una funcionalidad más específica:
 - **WalletConnectButton**
@@ -186,11 +189,11 @@ const sendSol = event => {
 ```
 
 Cuando se llama a esta función, la billetera conectada mostrará la transacción para la aprobación del usuario. Si es aprobada, entonces se enviará la transacción.
-[3.6](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/6.png)
+![3.6](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/6.png)
 
 # Demostración
 Vamos a tomar el programa Ping de la última lección y construye una interfaz que permita a los usuarios aprobar una transacción que envía un ping al programa. Como recordatorio, la llave pública del programa es: **ChT1B39WKLS8qUrkLvFDXMhEJ4F1XZzwUNHUt4AU9aVa** y la llave pública de la cuenta de datos es **Ah9K7dQ8EHaZqcAsgBW8w37yN2eAy3koFmUn4x3CJtod** .
-[3.7](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/7.png)
+![3.7](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/7.png)
 
 ## 1. Descarga la extensión del Navegador Phantom, y configúrala para DevNet
 Si aún no lo tienes, descarga la [extensión de la wallet de phantom](https://phantom.app/download) . En el momento de escribir esto, admite los navegadores Chrome, Brave, Firefox y Edge, por lo que también necesitarás tener uno de esos navegadores instalado. Sigue las instrucciones de Phantom para crear una nueva cuenta y una nueva billetera.
