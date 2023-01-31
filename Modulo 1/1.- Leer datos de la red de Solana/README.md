@@ -137,6 +137,7 @@ Creemos un sitio web sencillo que permita a los usuarios verificar el saldo en u
 Será algo así:
 
 <!-- Image here -->
+![1.2](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.1/2into-fronted-demo.png)
 
 Para mantenernos en el tema, no trabajaremos completamente desde cero. Puedes encontrar el código inicial [aquí](https://github.com/Unboxed-Software/solana-intro-frontend/tree/starter). El proyecto inicial utiliza Next.js y Typescript. Si estás acostumbrado a una pila diferente, ¡no te preocupes! Los principios de web3 y Solana que aprenderás a lo largo de estas lecciones son aplicables a cualquier pila de frontend con la que te sientas más cómodo.
 
@@ -181,7 +182,7 @@ Observa que estamos tomando el saldo devuelto por Solana y dividiéndolo por **L
 
 En este punto, deberías ser capaz de poner una dirección válida en el campo del formulario y hacer clic en "Check SOL Balance" para ver tanto la dirección como el saldo que se popula a continuación.
 
-### Manejar direcciones inválidas
+### 4. Manejar direcciones inválidas
 
 Estamos casi listos. El único problema restante es que al usar una dirección inválida no se muestra ningún mensaje de error o cambia el saldo mostrado. Si abres la consola del desarrollador, verás el error "Error: entrada de clave pública no válida". Al utilizar el constructor PublicKey, es necesario pasar una dirección válida o obtendrás este error.
 
@@ -207,4 +208,5 @@ const manipuladorDeLlaveAlEnviar = (llavePublica: string) => {
 Ten en cuenta que en el bloque catch también limpiamos la dirección y el saldo para evitar confusiones.
 
 ¡Lo hicimos! Tenemos un sitio funcional que lee saldos SOL de la red Solana. Estás bien encaminado para lograr tus grandes ambiciones en Solana. Si necesitas pasar más tiempo mirando este código para entenderlo mejor, echa un vistazo al [código de solución completo](https://github.com/Unboxed-Software/solana-intro-frontend). Aferrate fuerte, estas lecciones aumentarán rápidamente. 
+
 
