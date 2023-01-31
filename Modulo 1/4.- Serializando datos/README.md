@@ -149,6 +149,8 @@ web3.sendAndConfirmTransaction(connection, transaction, [player]).then((txid) =>
 
  # Demostración
 Practiquemos juntos construyendo una aplicación de Revisión de Películas que permite a los usuarios enviar una revisión de una película y almacenarla en la red de Solana. Construiremos esta aplicación poco a poco en las próximas lecciones, agregando nuevas funcionalidades en cada lección.
+
+![4.1](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.4/1.png)
  
 La llave pública del programa Solana que utilizaremos para esta aplicación es **CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN** .
 
