@@ -183,6 +183,7 @@ Al probar, ya sea localmente o en devnet, puede usar el comando Solana CLI **sol
 ### Solana Explorer
 
 <!-- Image here -->
+![2.1](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.2/1solana-explorer-devnet.png)
 
 Todas las transacciones en la cadena de bloques son visibles públicamente en el [Explorador de Solana](https://explorer.solana.com). Por ejemplo, podría tomar la firma devuelta por **sendAndConfirmTransaction()** en el ejemplo anterior, buscar esa firma en el Explorador de Solana y ver:
 
@@ -192,6 +193,7 @@ Todas las transacciones en la cadena de bloques son visibles públicamente en el
 - ¡y más!
 
 <!-- Image here -->
+![2.2](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.2/2solana-explorer-transaction-overview.png)
 
 ## Demo
 
