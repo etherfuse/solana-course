@@ -32,7 +32,7 @@ A menos que estés creando una aplicación de monedero tú mismo, tu código nun
 ## Phantom Wallet
 **Phantom** es una billetera de software ampliamente utilizada en el ecosistema Solana. Soporta navegadores populares y tiene una aplicación móvil para conectarse en cualquier momento. Se recomienda soportar varias billeteras para las aplicaciones descentralizadas, pero este curso se centra específicamente en Phantom.
 
-## Adaptador d Wallets de Solana
+## Adaptador de Wallets de Solana
 El adaptador de billeteras de Solana es un conjunto de bibliotecas que se pueden utilizar para simplificar el proceso de soporte para las extensiones de navegador de billeteras.
 El adaptador de billeteras de Solana consta de varios paquetes modulares. La funcionalidad principal se encuentra en **@solana/wallet-adapter-base** y **@solana/wallet-adapter-react** . 
 También hay paquetes que proporcionan componentes para marcos de interfaz de usuario comunes. En esta lección y en todo este curso, estaremos utilizando componentes de **@solana/wallet-adapter-react-ui** . 
@@ -80,6 +80,8 @@ export const Home: NextPage = (props) => {
 Ten en cuenta que **ConnectionProvider** requiere una propiedad **endpoint** y que **WalletProvider** requiere una propiedad **wallets** . Seguimos utilizando el endpoint para el clúster Devnet y, por ahora, solo estamos utilizando **PhantomWalletAdapter** para las **billeteras** .
 
 En este punto, puedes conectarte con **wallet.connect()** , lo que efectivamente instruirá a la billetera para solicitar al usuario permiso para ver su llave pública y solicitar la aprobación para las transacciones.
+
+![3.1](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/1.png)
  
 Aunque podrías hacerlo en un gancho **useEffect** , normalmente desearás proporcionar una funcionalidad más sofisticada. Por ejemplo, es posible que desees que los usuarios puedan elegir de una lista de billeteras admitidas o desconectarse después de haberse conectado.
  
@@ -115,6 +117,10 @@ export default Home
 
 
 El **WalletModalProvider** agrega funcionalidad para presentar una pantalla modal para que los usuarios puedan seleccionar qué billetera desean usar. El **WalletMultiButton** cambia el comportamiento para que coincida con el estado de conexión:
+[3.2](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/2.png)
+[3.3](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/3.png)
+[3.4](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/4.png)
+[3.5](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/5.png)
 
  También puedes usar componentes más granulares si necesitas una funcionalidad más específica:
 - **WalletConnectButton**
@@ -180,9 +186,11 @@ const sendSol = event => {
 ```
 
 Cuando se llama a esta función, la billetera conectada mostrará la transacción para la aprobación del usuario. Si es aprobada, entonces se enviará la transacción.
+[3.6](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/6.png)
 
 # Demostración
 Vamos a tomar el programa Ping de la última lección y construye una interfaz que permita a los usuarios aprobar una transacción que envía un ping al programa. Como recordatorio, la llave pública del programa es: **ChT1B39WKLS8qUrkLvFDXMhEJ4F1XZzwUNHUt4AU9aVa** y la llave pública de la cuenta de datos es **Ah9K7dQ8EHaZqcAsgBW8w37yN2eAy3koFmUn4x3CJtod** .
+[3.7](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/7.png)
 
 ## 1. Descarga la extensión del Navegador Phantom, y configúrala para DevNet
 Si aún no lo tienes, descarga la [extensión de la wallet de phantom](https://phantom.app/download) . En el momento de escribir esto, admite los navegadores Chrome, Brave, Firefox y Edge, por lo que también necesitarás tener uno de esos navegadores instalado. Sigue las instrucciones de Phantom para crear una nueva cuenta y una nueva billetera.
