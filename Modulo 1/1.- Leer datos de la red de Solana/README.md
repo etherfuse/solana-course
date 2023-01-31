@@ -50,7 +50,7 @@ Las llaves públicas son de 256 bits y a menudo se muestran como cadenas codific
 ## Solana JSON RPC API
 
 <!-- Image here -->
-![1.1](images\1.1\1json-rpc-ilustracion.png)
+![1.1](images/1.1/1json-rpc-ilustracion.png)
 
 Toda la interacción del cliente con la red Solana se realiza a través de la API JSON RPC de Solana. 
 
