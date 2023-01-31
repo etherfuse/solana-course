@@ -117,6 +117,7 @@ export default Home
 
 
 El **WalletModalProvider** agrega funcionalidad para presentar una pantalla modal para que los usuarios puedan seleccionar qué billetera desean usar. El **WalletMultiButton** cambia el comportamiento para que coincida con el estado de conexión:
+
 ![3.2](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/2.png)
 
 ![3.3](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.3/3.png)
