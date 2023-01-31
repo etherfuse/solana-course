@@ -29,6 +29,12 @@ Los PDAs técnicamente no se crean. Más bien, se encuentran o derivan en base a
 Los pares de llaves regulares de Solana se encuentran en la curva ed2559 Elíptica. Esta función criptográfica asegura que cada punto a lo largo de la curva tiene un punto correspondiente en algún otro lugar de la curva, lo que permite las llaves públicas/privadas. Los PDAs son direcciones que no se encuentran en la curva ed2559 Elíptica y por lo tanto no pueden ser firmadas por una llave privada (ya que no hay una). Esto asegura que el programa es el único firmante válido para esa dirección.
 Para encontrar una llave pública que no se encuentra en la curva ed2559, el ID del programa y las semillas de elección del desarrollador (como una cadena de texto) se pasan a través de la función **findProgramAddress (seeds, programid)** . Esta función combina el ID del programa, las semillas y una semilla de aumento en un buffer y lo pasa a un hash SHA256 para ver si la dirección resultante está en la curva. Si la dirección está en la curva (~50% de posibilidades de que lo esté), entonces la semilla de aumento se decrementa en 1 y se vuelve a calcular la dirección. La semilla de aumento comienza en 255 y progresivamente se iterate hacia abajo en **bump = 254** , **bump = 253** , etc. hasta que se encuentra una dirección con las semillas y el aumento dado que no se encuentra en la curva ed2559. La función **findProgramAddress** devuelve la dirección resultante y el aumento utilizado para sacarlo de la curva. De esta manera, la dirección se puede generar en cualquier lugar siempre y cuando tenga el aumento y las semillas.
 
+
+
+![5.1](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.5/1.png)
+
+
+
 Los PDAs son un concepto único y son una de las partes más difíciles del desarrollo en Solana de entender. Si no lo entiendes de inmediato, no te preocupes. Tendrá más sentido a medida que practiques más.
 
 ## ¿Por qué esto es importante?
@@ -105,11 +111,14 @@ borshAccountSchema = borsh.struct([
 const { playerId, name } = borshAccountSchema.decode(buffer)
 ```
 
-# Demostracion
+# Demostración
 Practiquemos juntos continuando trabajando en la aplicación de revisión de películas de la última lección. No se preocupe si acaba de llegar a esta lección, debería ser posible seguir de cualquier manera.
 Como recordatorio, este proyecto utiliza un programa Solana implementado en Devnet que permite a los usuarios revisar películas. En la última lección, agregamos funcionalidad al esqueleto de la interfaz frontal para que los usuarios pudieran enviar reseñas de películas, pero la lista de reseñas todavía muestra datos ficticios. Solucionemos eso recuperando las cuentas de almacenamiento del programa y deserializando los datos almacenados allí.
 
-## 1. Descargue el Codigo Inicial
+
+![5.2](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.5/2.png)
+
+## 1. Descargue el Código Inicial
 Si no completó la demostración de la lección anterior o simplemente quiere asegurarse de no haber perdido nada, puede descargar el [código inicial](https://github.com/Unboxed-Software/solana-movie-frontend/tree/solution-serialize-instruction-data).
 
 El proyecto es una aplicación Next.js bastante simple. Incluye el **WalletContextProvider** que creamos en la lección de monederos, un componente **Card** para mostrar una revisión de película, un componente **MovieList** que muestra las reseñas en una lista, un componente **Form** para enviar una nueva reseña y un archivo **Movie.ts** que contiene una definición de clase para un objeto **Movie**.
