@@ -209,4 +209,4 @@ Ten en cuenta que en el bloque catch también limpiamos la dirección y el saldo
 
 ¡Lo hicimos! Tenemos un sitio funcional que lee saldos SOL de la red Solana. Estás bien encaminado para lograr tus grandes ambiciones en Solana. Si necesitas pasar más tiempo mirando este código para entenderlo mejor, echa un vistazo al [código de solución completo](https://github.com/Unboxed-Software/solana-intro-frontend). Aferrate fuerte, estas lecciones aumentarán rápidamente. 
 
-
+<!-- Imagenes listas-->
