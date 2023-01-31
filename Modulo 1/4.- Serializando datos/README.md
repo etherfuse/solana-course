@@ -58,7 +58,8 @@ Además de saber qué información incluir en un búfer de datos de instrucción
 
 *”Borsh significa Binary Object Representation Serializer for Hashing (Serializador de representación de objeto binario para la generación de huellas digitales). Se destina a ser utilizado en proyectos críticos para la seguridad ya que prioriza la consistencia, la seguridad y la velocidad, y viene con una especificación estricta.”*
 
-Borsh mantiene una **biblioteca JS** que maneja la serialización de tipos comunes en un búfer. También hay otros paquetes construidos sobre borsh que intentan hacer este proceso aún más fácil. Utilizaremos la biblioteca **@project-serum/borsh** que se puede instalar mediante **npm** .
+Borsh mantiene una **biblioteca JS** que maneja la serialización de tipos comunes en un búfer. También hay otros paquetes construidos sobre borsh que intentan hacer este proceso aún más fácil. Utilizaremos la biblioteca **@project-serum/borsh** que se puede instalar mediante **npm**.
+
 A partir del ejemplo anterior de inventario de juegos, veamos un escenario hipotético en el que estamos instruyendo al programa para equipar a un jugador con un determinado elemento. Asuma que el programa está diseñado para aceptar un búfer que representa una estructura con las siguientes propiedades:
  1. **variante** como un entero sin signo de 8 bits que indica al programa qué instrucción o función ejecutar.
 2. **playerId** como un entero sin signo de 16 bits que representa el ID del jugador que se equipará con el elemento dado.
@@ -151,8 +152,8 @@ Practiquemos juntos construyendo una aplicación de Revisión de Películas que 
  
 La llave pública del programa Solana que utilizaremos para esta aplicación es **CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN** .
 
-“” 1. Descargar el Código Inicial
-Antes de comenzar, descargue **el código inicial** .
+## 1. Descargar el Código Inicial
+Antes de comenzar, descargue [el código inicial](https://github.com/Unboxed-Software/solana-movie-frontend/tree/starter) .
 El proyecto es una aplicación Next.js bastante simple. Incluye el **WalletContextProvider** que creamos en la lección de Wallets, un componente **Card** para mostrar una revisión de película, un componente **MovieList** que muestra revisiones en una lista, un componente **Form** para enviar una nueva revisión y un archivo **Movie.ts** que contiene una definición de clase para un objeto **Movie** .
 Tenga en cuenta que por ahora, las películas que se muestran en la página cuando ejecuta **npm run dev** son mocks. En esta lección, nos enfocaremos en agregar una nueva revisión, pero no podremos ver esa revisión en pantalla. En la próxima lección, nos enfocaremos en deserializar datos personalizados de cuentas en cadena.
 
