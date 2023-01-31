@@ -414,3 +414,8 @@ const onClick = () => {
 Hay muchas cosas que podrías hacer para mejorar aún más la experiencia del usuario aquí. Por ejemplo, podrías cambiar la interfaz de usuario para que solo te muestre el botón Ping cuando esté conectada una billetera y muestra algún otro aviso en caso contrario. Podrías vincular a la transacción en Solana Explorer después de que un usuario confirme una transacción para que puedan ver fácilmente los detalles de la transacción. Cuanto más experimentes con ello, más cómodo te sentirás, ¡así que sé creativo!
 Si necesitas pasar algún tiempo mirando el código fuente completo de esta demostración para entender todo esto en contexto, echa un vistazo [aquí!](https://github.com/Unboxed-Software/solana-ping-frontend) .
  
+
+
+
+
+<!-- IMAGENES LISTAS-->

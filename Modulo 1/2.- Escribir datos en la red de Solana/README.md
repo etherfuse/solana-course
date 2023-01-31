@@ -443,3 +443,8 @@ En las próximas lecciones aprenderás cómo:
 - hacerlo de forma segura desde el navegador en lugar de desde un script
 - agregar datos personalizados a tus instrucciones
 - deserializar datos de la cadena
+
+
+
+
+<!-- IMAGENES LISTAS-->

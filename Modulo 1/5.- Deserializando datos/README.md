@@ -234,3 +234,6 @@ export const MovieList: FC = () => {
 En este punto, ¡debería poder ejecutar la aplicación y ver la lista de reseñas de películas recuperadas del programa!
 Dependiendo de cuántas reseñas se hayan enviado, esto puede tardar mucho tiempo en cargar o incluso bloquear completamente su navegador. Pero no se preocupe, en la próxima lección aprenderemos a dividir y filtrar las cuentas para poder ser más quirúrgico con lo que se carga.
 Si necesita más tiempo con este proyecto para sentirse cómodo con estos conceptos, eche un vistazo al **código de solución** antes de continuar.
+
+
+<!-- IMAGENES LISTAS-->

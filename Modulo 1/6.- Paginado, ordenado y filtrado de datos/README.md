@@ -124,6 +124,9 @@ Dos cosas a tener en cuenta en el ejemplo anterior:
 # Demostración
 ¿Recuerdas la aplicación de reseñas de películas en la que trabajamos en las últimas dos lecciones? Vamos a darle un toque especial al paginando la lista de reseñas, ordenando las reseñas para que no sean tan aleatorias e incluyendo una funcionalidad de búsqueda básica. No te preocupes si acabas de comenzar esta lección sin haber mirado las anteriores, siempre y cuando tengas los conocimientos previos, deberías ser capaz de seguir la demostración sin haber trabajado en este proyecto específico todavía.
 
+
+![6.1](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%201/images/1.6/1.png)
+
 ## 1. Descargue el código de inicio
 Si no completó la demostración de la última lección o solo desea asegurarse de no haber perdido nada, puede descargar el [código de inicio](https://github.com/Unboxed-Software/solana-movie-frontend/tree/solution-deserialize-account-data).
 El proyecto es una aplicación Next.js bastante simple. Incluye el **WalletContextProvider** que creamos en la lección de monederos, un componente **Card** para mostrar una reseña de película, un componente **MovieList** que muestra reseñas en una lista, un componente **Form** para enviar una nueva reseña y un archivo **Movie.ts** que contiene una definición de clase para un objeto **Película** .
@@ -411,3 +414,5 @@ Ahora es tu turno de intentar hacerlo por tu cuenta. Utilizando la aplicación d
 4. Agrega la capacidad de buscar a través de las presentaciones por el nombre de un estudiante.
 Este es un desafío. Si te quedas atascado, no dudes en consultar el **código de solución** . ¡Con esto completas el Módulo 1! ¿Cómo ha sido tu experiencia? ¡Sientete libre de compartir alguna retroalimentación rápida **aquí** , para que podamos seguir mejorando el curso!
 ¡Como siempre, sé creativo con estos desafíos y lleva los más allá de las instrucciones si lo deseas!
+
+<!-- IMAGENES LISTAS-->

@@ -354,3 +354,6 @@ const handleTransactionSubmit = async (movie: Movie) => {
 Si necesitas un poco más de tiempo con este proyecto para sentirte cómodo, echa un vistazo al **código de solución** completa.
 
 
+
+
+<!-- IMAGENES LISTAS-->
