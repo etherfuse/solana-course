@@ -443,6 +443,10 @@ Para esta demostración, se ha creado un pool de tokens de dos nuevos tokens y e
 - Retirar su liquidez depositada
 - Intercambiar de un token a otro
 
+
+![2.2](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%202/images/2.2/1.png?raw=true)
+
+
 ## 1. Descarga el código base
 Antes de empezar, descarga el [código base](https://balancer.fi/whitepaper.pdf). 
 

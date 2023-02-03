@@ -33,6 +33,9 @@ Abordaremos esto desde el lado del cliente del proceso de desarrollo utilizando 
 
 Como ejemplo, veamos el **USD Coin (USDC) en el Solana Explorer** . La dirección del Token Mint de USDC es **EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v** . Con el explorador, podemos ver los detalles particulares sobre el Token Mint de USDC, como la oferta actual de tokens, las direcciones de los autoridades de acuñación y congelación, y la precisión decimal del token:
  
+ ![2.1](https://github.com/blockchainBS-team/etherfuse-course/blob/main/Modulo%202/images/2.1/1.png?raw=true)
+
+ 
 Para crear una nueva acuñación de Tokens, necesita enviar las instrucciones de transacción correctas al programa de Tokens. Para hacerlo, usaremos la función **createMint** de **@solana/spl-token** .
 
 ```Javascript

@@ -34,6 +34,12 @@ Por lo general, los metadatos de un NFT tienen un componente tanto en-cadena com
 
 A continuación se muestra un ejemplo de la relación entre los metadatos en-cadena y fuera de la cadena. Los metadatos en-cadena contienen un campo URI que apunta a un archivo **.json** fuera de la cadena que almacena el enlace a la imagen del NFT y los metadatos adicionales.
 
+
+
+![2.3](https://soldev.app/assets/solana-nft-metaplex-metadata.png)
+
+
+
 ## Metaplex
 **Metaplex** es una organización que proporciona una suite de herramientas, como el [SDK de Metaplex](https://docs.metaplex.com/sdks/js/) , que simplifican la creación y distribución de NFT en la cadena de bloques de Solana. Estas herramientas se adaptan a una amplia gama de usos y te permiten gestionar fácilmente todo el proceso de creación y acuñado de una colección de NFT.
 
