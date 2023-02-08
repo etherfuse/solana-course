@@ -342,6 +342,16 @@ msg!("state account serialized");
 
 ## 9. Construir y desplegar 
 ¡Estamos listos para construir y desplegar nuestro programa!
+
+
+
+
+![3.3](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%203/images/3.3/1.gif)
+
+
+
+
+
 Puedes probar tu programa enviando una transacción con los datos de instrucción correctos. Para eso, no dudes en usar este [script](https://github.com/Unboxed-Software/solana-movie-client) o el [frontend](https://github.com/Unboxed-Software/solana-movie-frontend) que construimos en la *lección Deserializar datos de instrucción personalizados* . En ambos casos, asegúrate de copiar y pegar el ID del programa para tu programa en el área apropiada del código fuente para asegurarte de estar probando el programa correcto.
 Si utilizas el frontend, simplemente reemplaza el **MOVIE_REVIEW_PROGRAM_ID** en ambos componentes **MovieList.tsx** y **Form.tsx** con la dirección del programa que hayas desplegado. Luego ejecuta el frontend, envía una vista y actualiza el navegador para ver la revisión.
 Si necesitas más tiempo con este proyecto para sentirte cómodo con estos conceptos, echa un vistazo al *código de solución* antes de continuar."

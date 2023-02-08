@@ -166,6 +166,10 @@ Vamos a construir un programa "Hola, mundo" usando Solana Playground. Solana Pla
 ## 1. Configuración
 Haga clic [aquí](https://beta.solpg.io) para abrir Solana Playground. A continuación, elimine todo en el archivo **lib.rs** predeterminado y cree una billetera de Playground.
 
+
+![3.1](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%203/images/3.1/1.gif)
+
+
 ## 2. Biblioteca de programas Solana
 Primero, traigamos al alcance todo lo que necesitaremos de la biblioteca **solana_program** .
 
@@ -224,16 +228,25 @@ pub fn process_instruction(
 ## 4. Construir y desplegar 
 Ahora construyamos y despleguemos nuestro programa usando Solana Playground.
 
+
+![3.1.2](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%203/images/3.1/2.gif)
+
+
 ## 5. Invocar el programa
 Finalmente, invoquemos nuestro programa desde el lado del cliente. Descargue el código [aquí](https://github.com/Unboxed-Software/solana-hello-world-client).
 El enfoque de esta lección es construir nuestro programa Solana, por lo que hemos proporcionado el código del cliente para invocar nuestro programa "Hola, mundo”. El código proporcionado incluye una función de ayuda **sayHello** que construye y envía nuestra transacción. Luego llamamos a **sayHello** en la función principal y imprimimos una URL de Solana Explorer para ver los detalles de nuestra transacción en el navegador.
 
 Abra el archivo **index.ts** debería ver una variable llamada **programId**. Actualice esta con la ID de programa del programa "Hola, mundo" que acaba de desplegar usando Solana Playground.
-Puede encontrar la ID del programa en Solana Playground haciendo referencia a la imagen a continuación.
+
 
 ```typescript
 let programId = new web3.PublicKey("<TU_ID_DE_PROGRAMA>");
 ```
+
+Puede encontrar la ID del programa en Solana Playground haciendo referencia a la imagen a continuación.
+
+![3.1.3](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%203/images/3.1/3.gif)
+
 
 A continuación, instale los módulos de Node con **npm i** .
 Ahora, ejecute **npm start** . Este comando hará lo siguiente:
@@ -243,6 +256,8 @@ Ahora, ejecute **npm start** . Este comando hará lo siguiente:
 4. Salida de la URL de la transacción para ver en Solana Explorer
 
 Copie la URL de transacción impresa en la consola en su navegador. Desplácese hacia abajo para ver "Hola, mundo" en Program Instruction Logs.
+
+![3.1.4](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%203/images/3.1/4.png)
 
 Felicidades, ¡acabas de construir y desplegar con éxito un programa Solana!
 # Desafío
