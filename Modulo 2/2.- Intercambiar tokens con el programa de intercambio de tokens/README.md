@@ -840,3 +840,9 @@ const handleTransactionSubmit = async () => {
 ¡Y eso es todo! Una vez que tenga la instrucción de intercambio implementada, la interfaz de usuario debería ser completamente funcional y podrá enviar tokens por el aire, depositar liquidez, retirar su liquidez y intercambiar de un token a otro.
 
 Por favor tómese su tiempo con este código y los conceptos en esta lección. Los grupos de intercambio pueden ser mucho más complicados de lo que hemos implementado hoy, por lo que es importante entender los conceptos básicos. Si necesita más tiempo con la demo, ¡tómese el tiempo que necesite! Y si lo desea, eche un vistazo al [código de solución aquí](https://github.com/Unboxed-Software/solana-token-swap-frontend) .
+
+## Desafío
+
+Now that we've worked through the demo together, try and take it a step further with your own tokens!
+
+In the [Token Program](https://soldev.app/course/token-program.md) lesson you created some tokens. Now make a swap pool for those tokens and modify the code from this lesson's demo to use your tokens and newly created swap pool. There is no solution code for this since it's specific to your tokens, so go slow and take it one step at a time. You've got this!

@@ -556,3 +556,11 @@ async function createNft(
 
 ¡Felicidades! Has aprendido con éxito cómo usar el SDK Metaplex para crear, actualizar y verificar NFTs como parte de una colección. Eso es todo lo que necesitas para construir tu propia colección para cualquier caso de uso. Podrías construir un competidor de TicketMaster, renovar el programa de membresía de Costco o incluso digitalizar el sistema de identificación del estudiante de tu escuela. ¡Las posibilidades son infinitas!
 Si desea ver el código de la solución final, puede encontrarlo en la rama de [solución del mismo repositorio](https://github.com/Unboxed-Software/solana-metaplex/tree/solution).
+
+## Desafío
+
+Para profundizar tu comprensión de las herramientas de Metaplex, sumergete en la documentación de Metaplex y familiarízate con los diversos programas y herramientas ofrecidos por Metaplex. Por ejemplo, puedes profundizar en el aprendizaje sobre el programa Candy Machine para entender su funcionalidad.
+
+Una vez que tengas una comprensión de cómo funciona el programa Candy Machine, pon a prueba tus conocimientos usando Sugar CLI para crear una Candy Machine para tu propia colección. Esta experiencia práctica no solo reforzará tu comprensión de las herramientas, sino que también aumentará tu confianza en tu capacidad de usarlas efectivamente en el futuro.
+
+¡Diviértete con esto! ¡Esta será tu primera colección de NFT creada independientemente! Con esto, completarás el Módulo 2. ¡Espero que sientas el proceso! ¡No dudes en compartir algunos comentarios rápidos [aquí](https://airtable.com/shrOsyopqYlzvmXSC?prefill_Module=Module%202) para que podamos seguir mejorando el curso!

@@ -1039,3 +1039,26 @@ Si necesitas un poco más de tiempo con este proyecto para sentirte cómodo, ech
 
 ## Desafío
 
+Ahora es tu turno de construir algo de forma independiente. Crea una aplicación que permita a los usuarios crear una nueva fábrica, crear una cuenta de tokens y acuñar tokens.
+
+Tenga en cuenta que no podrá usar directamente las funciones de ayuda que revisamos en la demo. Para interactuar con el programa Token utilizando el adaptador de la billetera Phantom, deberá construir manualmente cada transacción y enviar la transacción a Phantom para su aprobación.
+
+- Puedes construirlo desde cero o descargar el código inicial [aquí](https://github.com/Unboxed-Software/solana-token-frontend/tree/starter).
+
+- Crea una nueva Fábrica de Tokens en el componente CreateMint. Si necesita un repaso sobre cómo enviar transacciones a una billetera para su aprobación, consulte la [lección de Billeteras](https://soldev.app/course/interact-with-wallets.md).
+
+Al crear una nueva fábrica, la Keypair recién generada también deberá firmar la transacción. Cuando se requieren firmantes adicionales además de la billetera conectada, utilice el siguiente formato:
+
+```Javascript
+sendTransaction(transaction, connection, {
+    signers: [Keypair],
+})
+```
+
+Crea una nueva cuenta de Token en el componente CreateTokenAccount.
+
+Acuña tokens en el componente MintToForm.
+
+Si te atascas, no dudes en consultar el [código de solución](https://github.com/ZYJLiu/solana-token-frontend).
+
+Y recuerda, ponte creativo y diviértete!!
