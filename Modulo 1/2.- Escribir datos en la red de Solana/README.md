@@ -431,6 +431,9 @@ Ahora ejecuta el código de nuevo. Puede tomar un momento o dos, pero ahora el c
 
 Copia esta firma de confirmación. Abre un navegador y ve a [el explorador de solana](https://explorer.solana.com/?cluster=devnet) (el parámetro de consulta al final de la URL asegurará que explorará las transacciones en Devnet en lugar de en Mainnet). Pega la firma en la barra de búsqueda de la parte superior del explorador de Devnet de Solana y pulsa Enter. Deberías ver todos los detalles sobre la transacción. Si desplazas hasta abajo, verás Program Logs, que muestran cuántas veces se ha llamado al programa, incluido tu llamado.
 
+
+![2.2](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.2/3solana-explorer-ping-result.png)
+
 Si deseas hacer más fácil buscar transacciones en el Explorador de Solana en el futuro, simplemente cambia tu **console.log** en **pingProgram()** a lo siguiente:
 
 ```JavaScript

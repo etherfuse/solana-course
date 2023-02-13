@@ -239,6 +239,11 @@ Si necesita más tiempo con este proyecto para sentirse cómodo con estos concep
 
 Ahora es tu turno de construir algo de manera independiente. En la lección anterior, trabajaste en la aplicación de Student Intros para serializar los datos de instrucción y enviar una nueva presentación a la red. Ahora es hora de obtener y deserializar los datos de la cuenta del programa. Recuerda, el programa Solana que brinda apoyo a esto está en *HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf*.
 
+
+![5.3](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.5/3.png)
+
+
+
 - Puedes construir desde cero o descargar el código base [aquí](https://github.com/Unboxed-Software/solana-student-intros-frontend/tree/solution-serialize-instruction-data).
 - Crea la estructura del buffer de cuentas en StudentIntro.ts. Los datos de la cuenta contienen:
 1. inicializado como un entero sin signo de 8 bits que representa la instrucción a ejecutar (debería ser 1).

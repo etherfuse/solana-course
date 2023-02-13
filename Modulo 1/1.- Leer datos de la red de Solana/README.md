@@ -215,4 +215,7 @@ Ya que este es el primer desafío, lo mantendremos sencillo. Adelante y agregue 
 
 Su dirección de billetera estándar no será ejecutable, por lo que si desea una dirección que sea ejecutable para pruebas, utilice CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN.
 
+
+![1.3](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.1/3into-fronted-challenge.png)
+
 Si se atasca, no dude en mirar el [código de solución](https://github.com/Unboxed-Software/solana-intro-frontend/tree/challenge-solution).

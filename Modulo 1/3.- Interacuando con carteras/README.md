@@ -418,6 +418,9 @@ Si necesitas pasar algún tiempo mirando el código fuente completo de esta demo
 
 Ahora le toca a usted construir algo de forma independiente. Cree una aplicación que permita a un usuario conectar su billetera Phantom y enviar SOL a otra cuenta.
 
+
+![3.8](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.3/8.png)
+
 - Puedes construir esto desde cero o puedes descargar el código inicial [aquí](https://github.com/Unboxed-Software/solana-send-sol-frontend/tree/starter).
 - Envuelva la aplicación inicial en los proveedores de contexto apropiados.
 - En el componente de formulario, configure la transacción y envíela a la billetera del usuario para su aprobación.

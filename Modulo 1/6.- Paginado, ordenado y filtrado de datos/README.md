@@ -418,7 +418,7 @@ Este es un desafío. Si te quedas atascado, no dudes en consultar el **código d
 ## Desafío
 Ahora es su turno de tratar de hacerlo por su cuenta. Usando la aplicación Student Intros del último lección, agregue la paginación, ordenar alfabeticamente por nombre y búsqueda por nombre.
 
-Captura de pantalla de Student Intros frontend
+![6.2](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.6/2.png)
 
 - Puedes construir esto desde cero o puedes descargar el código de inicio [aquí](https://github.com/Unboxed-Software/solana-student-intros-frontend/tree/solution-deserialize-account-data).
 - Agrega la paginación al proyecto prefetching cuentas sin datos, luego solo obteniendo los datos de la cuenta para cada cuenta cuando sea necesario.
