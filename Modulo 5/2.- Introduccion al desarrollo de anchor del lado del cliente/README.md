@@ -46,9 +46,9 @@ Para crear una instancia de **Program** , necesitarás lo siguiente:
 - **Provider** - encapsula la conexión a un clúster de Solana y una Billetera
 - **ProgramId** - la dirección en la cadena de bloques del programa
 
-```Image
 
-```
+![5.2](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%205/imagenes/2/1.png)
+
 
 La imagen anterior muestra cómo se combinan cada una de estas piezas para crear una instancia de **Program** . Revisaremos cada uno de ellos individualmente para tener una mejor idea de cómo todo se relaciona.
 
@@ -487,7 +487,18 @@ const refreshCount = async (program) => {
 4. Haz clic en el botón **Increment Counter** y luego aprueba la transacción
 5. Espera unos segundos y haz clic en **Refresh Count** . El contador debería incrementarse en la pantalla.
 
+
+![5.2](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%205/imagenes/2/gif2-1.gif)
+
+
 ¡No dudes en hacer clic en los enlaces para inspeccionar los registros del programa de cada transacción!
+
+
+![5.3](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%205/imagenes/2/3.png)
+
+
+![5.4](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%205/imagenes/2/4.png)
+
 
 Felicidades, ahora sabes cómo configurar una interfaz frontal para invocar un programa Solana utilizando un IDL de Anchor.
 Si necesitas más tiempo con este proyecto para sentirte cómodo con estos conceptos, no dudes en echar un vistazo al [código de la solución en la rama **solution-increment**](https://github.com/Unboxed-Software/anchor-ping-frontend/tree/solution-increment) antes de continuar.
