@@ -209,4 +209,10 @@ Ten en cuenta que en el bloque catch también limpiamos la dirección y el saldo
 
 ¡Lo hicimos! Tenemos un sitio funcional que lee saldos SOL de la red Solana. Estás bien encaminado para lograr tus grandes ambiciones en Solana. Si necesitas pasar más tiempo mirando este código para entenderlo mejor, echa un vistazo al [código de solución completo](https://github.com/Unboxed-Software/solana-intro-frontend). Aferrate fuerte, estas lecciones aumentarán rápidamente. 
 
-<!-- IMAGENES LISTAS-->
+## Desafió
+
+Ya que este es el primer desafío, lo mantendremos sencillo. Adelante y agregue a la interfaz de usuario que ya hemos creado, incluyendo un ítem de línea después de "Balance". Haga que el ítem de línea muestre si la cuenta es o no una cuenta ejecutable. Pista: hay un método getAccountInfo.
+
+Su dirección de billetera estándar no será ejecutable, por lo que si desea una dirección que sea ejecutable para pruebas, utilice CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN.
+
+Si se atasca, no dude en mirar el [código de solución](https://github.com/Unboxed-Software/solana-intro-frontend/tree/challenge-solution).
