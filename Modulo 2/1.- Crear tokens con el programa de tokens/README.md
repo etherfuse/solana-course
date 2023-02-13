@@ -1043,6 +1043,10 @@ Ahora es tu turno de construir algo de forma independiente. Crea una aplicación
 
 Tenga en cuenta que no podrá usar directamente las funciones de ayuda que revisamos en la demo. Para interactuar con el programa Token utilizando el adaptador de la billetera Phantom, deberá construir manualmente cada transacción y enviar la transacción a Phantom para su aprobación.
 
+
+![2.3](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%202/images/2.1/2.png)
+
+
 - Puedes construirlo desde cero o descargar el código inicial [aquí](https://github.com/Unboxed-Software/solana-token-frontend/tree/starter).
 
 - Crea una nueva Fábrica de Tokens en el componente CreateMint. Si necesita un repaso sobre cómo enviar transacciones a una billetera para su aprobación, consulte la [lección de Billeteras](https://soldev.app/course/interact-with-wallets.md).

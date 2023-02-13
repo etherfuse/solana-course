@@ -357,6 +357,12 @@ Si necesitas un poco más de tiempo con este proyecto para sentirte cómodo, ech
 
 Ahora es su turno de construir algo de forma independiente. Cree una aplicación que permita a los estudiantes de este curso presentarse a sí mismos. El programa Solana que admite esto se encuentra en HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf.
 
+
+
+![4.2](https://raw.githubusercontent.com/blockchainBS-team/etherfuse-course/main/Modulo%201/images/1.4/2.png)
+
+
+
 - Puedes construir esto desde cero o puedes descargar el código inicial aquí.
 - Crea el diseño del búfer de instrucciones en StudentIntro.ts. El programa espera que los datos de instrucción contengan:
 1. **variante** como un entero sin signo de 8 bits que representa la instrucción a ejecutar (debe ser 0).
