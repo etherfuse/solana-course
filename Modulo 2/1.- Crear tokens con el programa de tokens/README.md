@@ -1036,3 +1036,6 @@ async function main() {
 ## 9. Pruébalo todo
 Con eso, ejecuta **npm start** . ¡Deberías ver una serie de enlaces de Solana Explorer registrados en la consola! ¡Haz clic en ellos y mira lo que sucedió en cada paso del camino! Creaste una nueva fábrica de tokens, creaste una cuenta de tokens, acuñaste 100 tokens, aprobaste un delegado, transferiste 50 usando un delegado, revocaste el delegado y quemaste 25 más. Estás bien encaminado para ser un experto en tokens.
 Si necesitas un poco más de tiempo con este proyecto para sentirte cómodo, echa un vistazo al código de solución completo.
+
+## Desafío
+

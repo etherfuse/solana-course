@@ -235,5 +235,20 @@ En este punto, ¡debería poder ejecutar la aplicación y ver la lista de reseñ
 Dependiendo de cuántas reseñas se hayan enviado, esto puede tardar mucho tiempo en cargar o incluso bloquear completamente su navegador. Pero no se preocupe, en la próxima lección aprenderemos a dividir y filtrar las cuentas para poder ser más quirúrgico con lo que se carga.
 Si necesita más tiempo con este proyecto para sentirse cómodo con estos conceptos, eche un vistazo al **código de solución** antes de continuar.
 
+## Desafío
 
-<!-- IMAGENES LISTAS-->
+Ahora es tu turno de construir algo de manera independiente. En la lección anterior, trabajaste en la aplicación de Student Intros para serializar los datos de instrucción y enviar una nueva presentación a la red. Ahora es hora de obtener y deserializar los datos de la cuenta del programa. Recuerda, el programa Solana que brinda apoyo a esto está en *HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf*.
+
+- Puedes construir desde cero o descargar el código base [aquí](https://github.com/Unboxed-Software/solana-student-intros-frontend/tree/solution-serialize-instruction-data).
+- Crea la estructura del buffer de cuentas en StudentIntro.ts. Los datos de la cuenta contienen:
+1. inicializado como un entero sin signo de 8 bits que representa la instrucción a ejecutar (debería ser 1).
+2. nombre como una cadena que representa el nombre del estudiante.
+mensaje como una cadena que representa el mensaje que el estudiante compartió sobre su viaje en Solana.
+3. Crea un método estático en StudentIntro.ts que utilice la estructura del buffer para deserializar un buffer de datos de cuenta en un objeto StudentIntro.
+- En el componente StudentIntroList's useEffect, obtiene las cuentas del programa y deserializa sus datos en una lista de objetos StudentIntro.
+- En lugar de datos falsos, ahora deberías ver las presentaciones de los estudiantes de la red.
+Si te sientes muy atrapado, no dudes en revisar el código de solución [aquí](https://github.com/Unboxed-Software/solana-student-intros-frontend/tree/solution-deserialize-account-data).
+
+Como siempre, sé creativo con estos desafíos y haz que vayan más allá de las instrucciones si quieres!
+
+

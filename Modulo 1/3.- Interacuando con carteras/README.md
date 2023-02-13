@@ -414,8 +414,12 @@ const onClick = () => {
 Hay muchas cosas que podrías hacer para mejorar aún más la experiencia del usuario aquí. Por ejemplo, podrías cambiar la interfaz de usuario para que solo te muestre el botón Ping cuando esté conectada una billetera y muestra algún otro aviso en caso contrario. Podrías vincular a la transacción en Solana Explorer después de que un usuario confirme una transacción para que puedan ver fácilmente los detalles de la transacción. Cuanto más experimentes con ello, más cómodo te sentirás, ¡así que sé creativo!
 Si necesitas pasar algún tiempo mirando el código fuente completo de esta demostración para entender todo esto en contexto, echa un vistazo [aquí!](https://github.com/Unboxed-Software/solana-ping-frontend) .
  
+## Desafío
 
+Ahora le toca a usted construir algo de forma independiente. Cree una aplicación que permita a un usuario conectar su billetera Phantom y enviar SOL a otra cuenta.
 
-
-
-<!-- IMAGENES LISTAS-->
+- Puedes construir esto desde cero o puedes descargar el código inicial [aquí](https://github.com/Unboxed-Software/solana-send-sol-frontend/tree/starter).
+- Envuelva la aplicación inicial en los proveedores de contexto apropiados.
+- En el componente de formulario, configure la transacción y envíela a la billetera del usuario para su aprobación.
+- Sea creativo con la experiencia del usuario. ¡Agregue un enlace para que el usuario pueda ver la transacción en el Explorador Solana o algo más que le parezca interesante!
+- Si realmente está atascado, no dude en consultar el código de solución [aquí](https://github.com/Unboxed-Software/solana-send-sol-frontend/tree/main).

@@ -353,7 +353,18 @@ const handleTransactionSubmit = async (movie: Movie) => {
 ¡Y eso es todo! Ahora deberías poder usar el formulario en el sitio para enviar una reseña de película. Aunque no verás la actualización de la interfaz gráfica para reflejar la nueva reseña, puedes ver los registros de programa de la transacción en Solana Explorer para ver que fue exitosa.
 Si necesitas un poco más de tiempo con este proyecto para sentirte cómodo, echa un vistazo al **código de solución** completa.
 
+## Desafío
 
+Ahora es su turno de construir algo de forma independiente. Cree una aplicación que permita a los estudiantes de este curso presentarse a sí mismos. El programa Solana que admite esto se encuentra en HdE95RSVsdb315jfJtaykXhXY478h53X6okDupVfY9yf.
 
+- Puedes construir esto desde cero o puedes descargar el código inicial aquí.
+- Crea el diseño del búfer de instrucciones en StudentIntro.ts. El programa espera que los datos de instrucción contengan:
+1. **variante** como un entero sin signo de 8 bits que representa la instrucción a ejecutar (debe ser 0).
+2. **nombre** como una cadena que representa el nombre del estudiante.
+3. **mensaje** como una cadena que representa el mensaje que el estudiante comparte sobre su viaje en Solana.
+- Crea un método en StudentIntro.ts que utilice el diseño de búfer para serializar un objeto StudentIntro.
+- En el componente Form, implementa la función handleTransactionSubmit de manera que serialice un StudentIntro, construya las instrucciones y transacciones apropiadas y envíe la transacción a la billetera del usuario.
+- ¡Ahora deberías poder enviar presentaciones y tener la información almacenada en la cadena! Asegúrese de registrar el ID de la transacción y verificarlo en el Explorador Solana para verificar que funcionó.
+Si realmente está atascado, puede consultar el código de solución [aquí](https://github.com/Unboxed-Software/solana-student-intros-frontend/tree/solution-serialize-instruction-data).
 
-<!-- IMAGENES LISTAS-->
+No dude en ser creativo con estos desafíos y llevarlos aún más lejos. ¡Las instrucciones no están aquí para retenerlo!

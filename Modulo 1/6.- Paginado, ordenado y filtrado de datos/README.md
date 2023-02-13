@@ -415,4 +415,16 @@ Ahora es tu turno de intentar hacerlo por tu cuenta. Utilizando la aplicación d
 Este es un desafío. Si te quedas atascado, no dudes en consultar el **código de solución** . ¡Con esto completas el Módulo 1! ¿Cómo ha sido tu experiencia? ¡Sientete libre de compartir alguna retroalimentación rápida **aquí** , para que podamos seguir mejorando el curso!
 ¡Como siempre, sé creativo con estos desafíos y lleva los más allá de las instrucciones si lo deseas!
 
-<!-- IMAGENES LISTAS-->
+## Desafío
+Ahora es su turno de tratar de hacerlo por su cuenta. Usando la aplicación Student Intros del último lección, agregue la paginación, ordenar alfabeticamente por nombre y búsqueda por nombre.
+
+Captura de pantalla de Student Intros frontend
+
+- Puedes construir esto desde cero o puedes descargar el código de inicio [aquí](https://github.com/Unboxed-Software/solana-student-intros-frontend/tree/solution-deserialize-account-data).
+- Agrega la paginación al proyecto prefetching cuentas sin datos, luego solo obteniendo los datos de la cuenta para cada cuenta cuando sea necesario.
+- Ordena las cuentas mostradas en la aplicación alfabeticamente por nombre.
+- Agrega la capacidad de buscar a través de presentaciones por el nombre de un estudiante.
+
+Esto es desafiante. Si te atascas, no dudes en consultar el [código de solución](https://github.com/Unboxed-Software/solana-student-intros-frontend/tree/solution-paging-account-data). Con esto, completas el Módulo 1. ¿Cómo ha sido tu experiencia? No dudes en compartir algunos comentarios rápidos [aquí](https://airtable.com/shrOsyopqYlzvmXSC?prefill_Module=Module%201), para que podamos seguir mejorando el curso.
+
+Como siempre, sé creativo con estos desafíos y lleva más allá de las instrucciones si quieres.

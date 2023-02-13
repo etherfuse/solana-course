@@ -445,6 +445,8 @@ En las próximas lecciones aprenderás cómo:
 - deserializar datos de la cadena
 
 
+## Desafío
 
+Adelante y crea un script desde cero que te permita transferir SOL de una cuenta a otra en Devnet. Asegúrate de imprimir la firma de la transacción para que puedas verla en el Explorador Solana.
 
-<!-- IMAGENES LISTAS-->
+Si te atascas, no dudes en echar un vistazo al [código de solución](https://github.com/Unboxed-Software/solana-send-sol-client).
