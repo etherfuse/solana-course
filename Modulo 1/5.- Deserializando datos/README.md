@@ -72,7 +72,7 @@ Además de derivar direcciones, puedes obtener todas las cuentas creadas por un 
 
 ```JavaScript
 const accounts = connection.getProgramAccounts(programId).then(accounts => {
-	accounts.map(({ pubkey, account }) => {
+	accounts.map(({ pubkey, cuenta }) => {
 		console.log('Account:', pubkey)
 		console.log('Data buffer:', account.data)
 	})
@@ -141,17 +141,17 @@ Configuremos un esquema **borsh** en la clase **Movie** para representar el dise
 import * as borsh from '@project-serum/borsh'
 
 export class Movie {
-	title: string;
+	titulo: string;
 	rating: number;
-	description: string;
+	descripcion: string;
 
 	...
 
 	static borshAccountSchema = borsh.struct([
 		borsh.bool('initialized'),
 		borsh.u8('rating'),
-		borsh.str('title'),
-		borsh.str('description'),
+		borsh.str('titulo'),
+		borsh.str('descripcion'),
 	])
 }
 ```
@@ -165,17 +165,17 @@ Ahora que tenemos el diseño del buffer configurado, creemos un método estátic
 import * as borsh from '@project-serum/borsh'
 
 export class Movie {
-	title: string;
+	titulo: string;
 	rating: number;
-	description: string;
+	descripcion: string;
 
 	...
 
 	static borshAccountSchema = borsh.struct([
 		borsh.bool('initialized'),
 		borsh.u8('rating'),
-		borsh.str('title'),
-		borsh.str('description'),
+		borsh.str('titulo'),
+		borsh.str('descripcion'),
 	])
 
 	static deserialize(buffer?: Buffer): Movie|null {
@@ -184,8 +184,8 @@ export class Movie {
 		}
 
 		try {
-			const { title, rating, description } = this.borshAccountSchema.decode(buffer)
-			return new Movie(title, rating, description)
+			const { titulo, rating, descripcion } = this.borshAccountSchema.decode(buffer)
+			return new Movie(titulo, rating, descripcion)
 		} catch(error) {
 			console.log('Deserialization error:', error)
 			return null
@@ -209,22 +209,22 @@ const MOVIE_REVIEW_PROGRAM_ID = 'CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN'
 
 export const MovieList: FC = () => {
 	const connection = new web3.Connection(web3.clusterApiUrl('devnet'))
-	const [movies, setMovies] = useState<Movie[]>([])
+	const [peli, setPeli] = useState<Movie[]>([])
 
 	useEffect(() => {
 		connection.getProgramAccounts(new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID)).then(async (accounts) => {
-			const movies: Movie[] = accounts.map(({ account }) => {
-				return Movie.deserialize(account.data)
+			const peli: Movie[] = accounts.map(({ cuenta }) => {
+				return Movie.deserialize(cuenta.data)
 			})
 
-			setMovies(movies)
+			setPeli(peli)
 		})
 	}, [])
 
 	return (
 		<div>
 			{
-				movies.map((movie, i) => <Card key={i} movie={movie} /> )
+				peli.map((obj, i) => <Card key={i} movie={obj} /> )
 			}
 		</div>
 	)

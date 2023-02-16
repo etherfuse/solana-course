@@ -31,7 +31,7 @@ Cuando incluyes un **dataSlice** en el objeto de configuración, la función sol
 Una de las áreas en las que esto es útil es con la paginación. Si desea tener una lista que muestre todas las cuentas, pero hay tantas cuentas que no desea obtener todos los datos de una vez, puede obtener todas las cuentas sin datos. Luego, puede asignar el resultado a una lista de llaves de cuenta cuyos datos solo puede obtener según sea necesario.
 
 ```JavaScript
-const accountsWithoutData = await connection.getProgramAccounts(
+const accountsWithoutData = await conexion.getProgramAccounts(
 	programId,
 	{
 		dataSlice: { offset: 0, length: 0 }
@@ -44,9 +44,9 @@ const accountKeys = accountsWithoutData.map(account => account.pubkey)
 Con esta lista de llaves, luego puede obtener datos de cuenta en "páginas" utilizando el método **getMultipleAccountsInfo** :
 
 ```JavaScript
-const paginatedKeys = accountKeys.slice(0, 10)
-const accountInfos = await connection.getMultipleAccountsInfo(paginatedKeys)
-const deserializedObjects = accountInfos.map((accountInfo) => {
+const llavesPaginadas = accountKeys.slice(0, 10)
+const infoDeCuentas = await conexion.getMultipleAccountsInfo(paginatedKeys)
+const ObjetosDescerializados = accountInfos.map((accountInfo) => {
 	// lógica para descerializar la cuenta aquí 
 })
 ```
@@ -67,14 +67,14 @@ Luego debe determinar la longitud para hacer el trozo de datos. Dado que la long
 Una vez que ha obtenido cuentas con el trozo de datos dado, puede usar el método **sort** para ordenar la matriz antes de asignarla a una matriz de llaves públicas.
 
 ```JavaScript
-const accounts = await connection.getProgramAccounts(
+const cuentas = await conexion.getProgramAccounts(
 	programId,
 	{
 		dataSlice: { offset: 9, length: 15 }
 	}
 )
 
-	accounts.sort( (a, b) => {
+	cuentas.sort( (a, b) => {
 		const lengthA = a.account.data.readUInt32LE(0)
 		const lengthB = b.account.data.readUInt32LE(0)
 		const dataA = a.account.data.slice(4, 4 + lengthA)
@@ -82,7 +82,7 @@ const accounts = await connection.getProgramAccounts(
 		return dataA.compare(dataB)
 	})
 
-const accountKeys = accounts.map(account => account.pubkey)
+const accountKeys = cuentas.map(cuenta => cuenta.pubkey)
 ```
 
 Tenga en cuenta que en el fragmento anterior no comparamos los datos tal como se dan. Esto se debe a que para tipos de tamaño dinámico como las cadenas, Borsh coloca un entero sin signo de 32 bits al principio para indicar la longitud de los datos que representan ese campo. Por lo tanto, para comparar directamente los nombres, necesitamos obtener la longitud de cada uno, luego crear un trozo de datos con un desplazamiento de 4 bytes y la longitud adecuada.
@@ -90,16 +90,16 @@ Tenga en cuenta que en el fragmento anterior no comparamos los datos tal como se
 ## Usa filtros para recuperar solo cuentas específicas
 Limitar los datos recibidos por cuenta es genial, pero ¿qué pasa si solo deseas devolver cuentas que coincidan con un criterio específico en lugar de todas ellas? Ahí es donde entra en juego la opción de **filtros** . Esta opción es una matriz que puede tener objetos que coincidan con lo siguiente:
 - **memcmp** - compara una serie de bytes proporcionados con los datos de cuenta del programa en un punto de offset específico. Campos:
-    - **offset** - el número de desplazamiento en los datos de cuenta del programa antes de comparar los datos
-    - **bytes** - una cadena codificada en base 58 que representa los datos para comparar; limitado a menos de 129 bytes
+- **offset** - el número de desplazamiento en los datos de cuenta del programa antes de comparar los datos
+- **bytes** - una cadena codificada en base 58 que representa los datos para comparar; limitado a menos de 129 bytes
 - **dataSize** - compara la longitud de los datos de cuenta del programa con el tamaño de datos proporcionado
 
 Esto te permite filtrar en función de los datos que coinciden y/o el tamaño total de los datos.
 Por ejemplo, podrías buscar en una lista de contactos incluyendo un filtro **memcmp** :
 
 ```JavaScript
-async function fetchMatchingContactAccounts(connection: web3.Connection, search: string): Promise<(web3.AccountInfo<Buffer> | null)[]> {
-	const accounts = await connection.getProgramAccounts(
+async function fetchMatchingContactAccounts(conexion: web3.Connection, busqueda: string): Promise<(web3.AccountInfo<Buffer> | null)[]> {
+	const accounts = await conexion.getProgramAccounts(
 		programId,
 		{
 			dataSlice: { offset: 0, length: 0 },
@@ -108,7 +108,7 @@ async function fetchMatchingContactAccounts(connection: web3.Connection, search:
 					memcmp:
 						{
 							offset: 9,
-							bytes: bs58.encode(Buffer.from(search))
+							bytes: bs58.encode(Buffer.from(busqueda))
 						}
 				}
 			]
@@ -153,11 +153,11 @@ const MOVIE_REVIEW_PROGRAM_ID = 'CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN'
 export class MovieCoordinator {
 	static accounts: web3.PublicKey[] = []
 
-	static async prefetchAccounts(connection: web3.Connection) {
+	static async prefetchAccounts(conexion: web3.Connection) {
 
 	}
 
-	static async fetchPage(connection: web3.Connection, page: number, perPage: number): Promise<Movie[]> {
+	static async fetchPage(conexion: web3.Connection, page: number, perPage: number): Promise<Movie[]> {
 
 	}
 }
@@ -166,8 +166,8 @@ export class MovieCoordinator {
 La llave para la paginación es pre-cargar todas las cuentas sin datos. Rellenemos el cuerpo de **prefetchAccounts** para hacerlo y establezcamos las llaves públicas recuperadas en la propiedad **accounts** estática.
 
 ```JavaScript
-static async prefetchAccounts(connection: web3.Connection) {
-	const accounts = await connection.getProgramAccounts(
+static async prefetchAccounts(conexion: web3.Connection) {
+	const accounts = await conexion.getProgramAccounts(
 		new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID),
 		{
 			dataSlice: { offset: 0, length: 0 },
@@ -178,12 +178,12 @@ static async prefetchAccounts(connection: web3.Connection) {
 }
 ```
 
-Ahora, llenemos el método **fetchPage** . Primero, si las cuentas aún no se han pre-cargado, deberemos hacerlo. Luego, podemos obtener las llaves públicas de las cuentas que corresponden a la página solicitada y llamar a **connection.getMultipleAccountsInfo** . Finalmente, deserializamos los datos de la cuenta y devolvemos los objetos **Película** correspondientes.
+Ahora, llenemos el método **fetchPage** . Primero, si las cuentas aún no se han pre-cargado, deberemos hacerlo. Luego, podemos obtener las llaves públicas de las cuentas que corresponden a la página solicitada y llamar a **conexion.getMultipleAccountsInfo** . Finalmente, deserializamos los datos de la cuenta y devolvemos los objetos **Película** correspondientes.
 
 ```JavaScript
-static async fetchPage(connection: web3.Connection, page: number, perPage: number): Promise<Movie[]> {
+static async fetchPage(conexion: web3.Connection, page: number, perPage: number): Promise<Movie[]> {
 	if (this.accounts.length === 0) {
-		await this.prefetchAccounts(connection)
+		await this.prefetchAccounts(conexion)
 	}
 
 	const paginatedPublicKeys = this.accounts.slice(
@@ -195,9 +195,9 @@ static async fetchPage(connection: web3.Connection, page: number, perPage: numbe
             return []
 	}
 
-	const accounts = await connection.getMultipleAccountsInfo(paginatedPublicKeys)
+	const accounts = await conexion.getMultipleAccountsInfo(paginatedPublicKeys)
 
-	const movies = accounts.reduce((accum: Movie[], account) => {
+	const pelis = accounts.reduce((accum: Movie[], account) => {
 		const movie = Movie.deserialize(account?.data)
 		if (!movie) {
 			return accum
@@ -206,24 +206,24 @@ static async fetchPage(connection: web3.Connection, page: number, perPage: numbe
 		return [...accum, movie]
 	}, [])
 
-	return movies
+	return pelis
 }
 ```
 
 Con eso hecho, podemos reconfigurar **MovieList** para usar estos métodos. En **MovieList.tsx** , agregue **const [page, setPage] = useState (1)** cerca de las llamadas **useState** existentes. Luego, actualice **useEffect** para llamar a **MovieCoordinator.fetchPage** en lugar de recuperar las cuentas en línea.
 
 ```JavaScript
-const connection = new web3.Connection(web3.clusterApiUrl('devnet'))
-const [movies, setMovies] = useState<Movie[]>([])
+const conexion = new web3.Connection(web3.clusterApiUrl('devnet'))
+const [pelis, setPelis] = useState<Movie[]>([])
 const [page, setPage] = useState(1)
 
 useEffect(() => {
 	MovieCoordinator.fetchPage(
-		connection,
+		conexion,
 		page,
 		10
-	).then(setMovies)
-}, [page, search])
+	).then(setPelis)
+}, [page, busqueda])
 ```
 
 Por último, necesitamos agregar botones en la parte inferior de la lista para navegar a diferentes páginas:
@@ -232,7 +232,7 @@ Por último, necesitamos agregar botones en la parte inferior de la lista para n
 return (
 	<div>
 		{
-			movies.map((movie, i) => <Card key={i} movie={movie} /> )
+			pelis.map((peli, i) => <Card key={i} movie={peli} /> )
 		}
 		<Center>
 			<HStack w='full' mt={2} mb={8} ml={4} mr={4}>
@@ -266,15 +266,15 @@ Una vez que hemos modificado la porción de datos en **getProgramAccounts** , en
 Ahora que hemos pensado en esto, modifiquemos la implementación de **prefetchAccounts** en **MovieCoordinator** :
 
 ```JavaScript
-static async prefetchAccounts(connection: web3.Connection, filters: AccountFilter[]) {
-	const accounts = await connection.getProgramAccounts(
+static async prefetchAccounts(conexion: web3.Connection, filters: AccountFilter[]) {
+	const cuentas = await conexion.getProgramAccounts(
 		new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID),
 		{
 			dataSlice: { offset: 2, length: 18 },
 		}
 	)
 
-    accounts.sort( (a, b) => {
+    cuentas.sort( (a, b) => {
         const lengthA = a.account.data.readUInt32LE(0)
         const lengthB = b.account.data.readUInt32LE(0)
         const dataA = a.account.data.slice(4, 4 + lengthA)
@@ -282,7 +282,7 @@ static async prefetchAccounts(connection: web3.Connection, filters: AccountFilte
         return dataA.compare(dataB)
     })
 
-	this.accounts = accounts.map(account => account.pubkey)
+	this.accounts = cuentas.map(cuenta => cuenta.pubkey)
 }
 ```
 
@@ -298,17 +298,17 @@ import bs58 from 'bs58'
 
 ...
 
-static async prefetchAccounts(connection: web3.Connection, search: string) {
-	const accounts = await connection.getProgramAccounts(
+static async prefetchAccounts(conexion: web3.Connection, busqueda: string) {
+	const accounts = await conexion.getProgramAccounts(
 		new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID),
 		{
 			dataSlice: { offset: 2, length: 18 },
-			filters: search === '' ? [] : [
+			filters: busqueda === '' ? [] : [
 				{
 					memcmp:
 						{
 							offset: 6,
-							bytes: bs58.encode(Buffer.from(search))
+							bytes: bs58.encode(Buffer.from(busqueda))
 						}
 				}
 			]
@@ -330,9 +330,9 @@ static async prefetchAccounts(connection: web3.Connection, search: string) {
 Ahora, agregue un parámetro de **búsqueda** a **fetchPage** y actualice su llamada a **prefetchAccounts*** para pasarlo. También necesitaremos agregar un parámetro de **recarga** booleano a **fetchPage** para que podamos forzar una actualización de la pre-carga de cuentas cada vez que cambie el valor de búsqueda.
 
 ```JavaScript
-static async fetchPage(connection: web3.Connection, page: number, perPage: number, search: string, reload: boolean = false): Promise<Movie[]> {
+static async fetchPage(conexion: web3.Connection, page: number, perPage: number, busqueda: string, reload: boolean = false): Promise<Movie[]> {
 	if (this.accounts.length === 0 || reload) {
-		await this.prefetchAccounts(connection, search)
+		await this.prefetchAccounts(conexion, busqueda)
 	}
 
 	const paginatedPublicKeys = this.accounts.slice(
@@ -344,9 +344,9 @@ static async fetchPage(connection: web3.Connection, page: number, perPage: numbe
 		return []
 	}
 
-	const accounts = await connection.getMultipleAccountsInfo(paginatedPublicKeys)
+	const accounts = await conexion.getMultipleAccountsInfo(paginatedPublicKeys)
 
-	const movies = accounts.reduce((accum: Movie[], account) => {
+	const pelis = accounts.reduce((accum: Movie[], account) => {
 		const movie = Movie.deserialize(account?.data)
 		if (!movie) {
 			return accum
@@ -355,42 +355,42 @@ static async fetchPage(connection: web3.Connection, page: number, perPage: numbe
 		return [...accum, movie]
 	}, [])
 
-	return movies
+	return pelis
 }
 ```
 
 Con eso en su lugar, actualicemos el código en **MovieList** para llamarlo correctamente.
 
-Primero, agregue **const [search, setSearch] = useState('')** cerca de las otras llamadas **useState** . Luego, actualice la llamada a **MovieCoordinator.fetchPage** en el **useEffect** para pasar el parámetro de **búsqueda** y para recargar cuando **search !== ''** .
+Primero, agregue **const [busqueda, setBusqueda] = useState('')** cerca de las otras llamadas **useState** . Luego, actualice la llamada a **MovieCoordinator.fetchPage** en el **useEffect** para pasar el parámetro de **búsqueda** y para recargar cuando **busqueda !== ''** .
 
 ```JavaScript
-const connection = new web3.Connection(web3.clusterApiUrl('devnet'))
-const [movies, setMovies] = useState<Movie[]>([])
+const conexion = new web3.Connection(web3.clusterApiUrl('devnet'))
+const [pelis, setPelis] = useState<Movie[]>([])
 const [page, setPage] = useState(1)
-const [search, setSearch] = useState('')
+const [busqueda, setBusqueda] = useState('')
 
 useEffect(() => {
 	MovieCoordinator.fetchPage(
-		connection,
+		conexion,
 		page,
 		2,
-		search,
-		search !== ''
-	).then(setMovies)
-}, [page, search])
+		busqueda,
+		busqueda !== ''
+	).then(setPelis)
+}, [page, busqueda])
 ```
 
-Finalmente, agregue una barra de búsqueda que establecerá el valor de **search**:
+Finalmente, agregue una barra de búsqueda que establecerá el valor de **busqueda**:
 
 ```JavaScript
 return (
 	<div>
 		<Center>
 			<Input
-				id='search'
+				id='busqueda'
 				color='gray.400'
-				onChange={event => setSearch(event.currentTarget.value)}
-				placeholder='Search'
+				onChange={event => setBusqueda(event.currentTarget.value)}
+				placeholder='busqueda'
 				w='97%'
 				mt={2}
 				mb={2}

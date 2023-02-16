@@ -172,17 +172,17 @@ Configuremos un esquema de instrucción **borsh** en la clase **Movie** . Comien
 import * as borsh from '@project-serum/borsh'
 
 export class Movie {
-	title: string;
+	titulo: string;
 	rating: number;
-	description: string;
+	descripcion: string;
 
 	...
 
 	borshInstructionSchema = borsh.struct([
 		borsh.u8('variant'),
-		borsh.str('title'),
+		borsh.str('titulo'),
 		borsh.u8('rating'),
-		borsh.str('description'),
+		borsh.str('descripcion'),
 	])
 }
 ```
@@ -196,9 +196,9 @@ Ahora que tenemos la disposición del búfer configurada, creemos un método en 
 import * as borsh from '@project-serum/borsh'
 
 export class Movie {
-	title: string;
+	titulo: string;
 	rating: number;
-	description: string;
+	descripcion: string;
 
 	...
 
@@ -249,16 +249,16 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 const MOVIE_REVIEW_PROGRAM_ID = 'CenYq6bDRB7p73EjsPEpiYN7uveyPUTdXkDkgUduboaN'
 
 export const Form: FC = () => {
-	const [title, setTitle] = useState('')
+	const [titulo, setTitulo] = useState('')
 	const [rating, setRating] = useState(0)
-	const [message, setMessage] = useState('')
+	const [mensaje, setMensaje] = useState('')
 
 	const { connection } = useConnection();
 	const { publicKey, sendTransaction } = useWallet();
 
 	const handleSubmit = (event: any) => {
 		event.preventDefault()
-		const movie = new Movie(title, rating, description)
+		const movie = new Movie(titulo, rating, mensaje)
 		handleTransactionSubmit(movie)
 	}
 
@@ -317,7 +317,7 @@ const handleTransactionSubmit = async (movie: Movie) => {
 		new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID)
 	)
 
-	const instruction = new web3.TransactionInstruction({
+	const instruccion = new web3.TransactionInstruction({
 		keys: [
 			{
 				pubkey: publicKey,
@@ -339,10 +339,10 @@ const handleTransactionSubmit = async (movie: Movie) => {
 		programId: new web3.PublicKey(MOVIE_REVIEW_PROGRAM_ID)
 	})
 
-	transaction.add(instruction)
+	transaction.add(instruccion)
 
 	try {
-		let txid = await sendTransaction(transaction, connection)
+		let txid = await sendTransaction(transaccion, conexion)
 		console.log(`Transaction submitted: https://explorer.solana.com/tx/${txid}?cluster=devnet`)
 	} catch (e) {
 		alert(JSON.stringify(e))

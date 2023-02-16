@@ -70,7 +70,7 @@ export const Home: NextPage = (props) => {
     return (
         <ConnectionProvider endpoint={ruta}>
             <WalletProvider wallets={[billetera]}>
-                <p>Put the rest of your app here</p>
+                <p>El resto de tu aplicación aquí</p>
             </WalletProvider>
         </ConnectionProvider>
     )
@@ -105,7 +105,7 @@ const Home: NextPage = (props) => {
             <WalletProvider wallets={[billetera]}>
                 <WalletModalProvider>
                     <WalletMultiButton />
-                    <p>Put the rest of your app here</p>
+                    <p>El resto de tu aplicación aquí</p>
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
@@ -177,8 +177,8 @@ const sendSol = event => {
     const recipientPubKey = new web3.PublicKey(event.target.recipient.value)
 
     const sendSolInstruction = web3.SystemProgram.transfer({
-        fromPubkey: publicKey,
-        toPubkey: recipientPubKey,
+        deLlavePublica: publicKey,
+        aLlavePublica: recipientPubKey,
         lamports: LAMPORTS_PER_SOL * 0.1
     })
 
