@@ -65,11 +65,11 @@ import {
 } from "@metaplex-foundation/js";
 import { Connection, clusterApiUrl, Keypair } from "@solana/web3.js";
 
-const connection = new Connection(clusterApiUrl("devnet"));
-const wallet = Keypair.generate();
+const conexion = new Connection(clusterApiUrl("devnet"));
+const billetera = Keypair.generate();
 
-const metaplex = Metaplex.make(connection)
-    .use(keypairIdentity(wallet))
+const metaplex = Metaplex.make(conexion)
+    .use(keypairIdentity(billetera))
     .use(
         bundlrStorage({
             address: "https://devnet.bundlr.network",
@@ -84,13 +84,13 @@ Antes de poder crear un NFT, es necesario preparar y cargar cualquier activo que
 
 Preparar y cargar una imagen implica convertir la imagen en un buffer, convertirla al formato Metaplex utilizando la función **toMetaplexFile** , y finalmente cargarla en el Storage Driver designado.
  
-El SDK de Metaplex admite la creación de un nuevo archivo Metaplex a partir de archivos presentes en tu computadora local o aquellos cargados por un usuario a través de un navegador. Puedes hacer lo primero utilizando **fs.readFileSync** para leer el archivo de imagen, luego convertirlo en un archivo Metaplex utilizando **toMetaplexFile** . Finalmente, utilice su instancia de **Metaplex** para llamar a **storage().upload(file)** para cargar el archivo. El valor de retorno de la función será la URI donde se almacenó la imagen.
+El SDK de Metaplex admite la creación de un nuevo archivo Metaplex a partir de archivos presentes en tu computadora local o aquellos cargados por un usuario a través de un navegador. Puedes hacer lo primero utilizando **fs.readFileSync** para leer el archivo de imagen, luego convertirlo en un archivo Metaplex utilizando **toMetaplexFile** . Finalmente, utilice su instancia de **Metaplex** para llamar a **storage().upload(archivo)** para cargar el archivo. El valor de retorno de la función será la URI donde se almacenó la imagen.
 
 ```JavaScript
 const buffer = fs.readFileSync("/path/to/image.png");
-const file = toMetaplexFile(buffer, "image.png");
+const archivo = toMetaplexFile(buffer, "image.png");
 
-const imageUri = await metaplex.storage().upload(file);
+const uriDeImagen = await metaplex.storage().upload(archivo);
 ```
  
 ### Cargar metadatos
@@ -104,7 +104,7 @@ Para crear los metadatos, utilice el método **uploadMetadata** proporcionado po
 const { uri } = await metaplex.nfts().uploadMetadata({
     name: "My NFT",
     description: "My description",
-    image: imageUri,
+    image: uriDeImagen,
 });
 ```
 
@@ -153,7 +153,7 @@ Para agregar un NFT a una colección, primero debe crear el NFT de la colección
 const { collectionNft } = await metaplex.nfts().create(
     {
         uri: uri,
-        name: "My NFT Collection",
+        name: "Mi Coleccion de NFT",
         sellerFeeBasisPoints: 0,
         isCollection: true
     },
@@ -167,7 +167,7 @@ Luego, enumera la dirección de acuñación de la colección como referencia par
 const { nft } = await metaplex.nfts().create(
     {
         uri: uri,
-        name: "My NFT",
+        name: "Mi NFT",
         sellerFeeBasisPoints: 0,
         collection: collectionNft.mintAddress
     },
@@ -251,13 +251,13 @@ const updateNftData = {
 }
 
 async function main() {
-    // create a new connection to the cluster's API
-    const connection = new Connection(clusterApiUrl("devnet"));
+    // create a new conexion to the cluster's API
+    const conexion = new Connection(clusterApiUrl("devnet"));
 
-    // initialize a keypair for the user
-    const user = await initializeKeypair(connection);
+    // initialize a keypair for the usuario
+    const usuario = await initializeKeypair(conexion);
 
-    console.log("PublicKey:", user.publicKey.toBase58());
+    console.log("PublicKey:", usuario.publicKey.toBase58());
 }
 ```
 
@@ -278,17 +278,17 @@ Antes de comenzar a crear y actualizar NFT, necesitamos configurar la instancia 
 
 ```JavaScript
 async function main() {
-    // create a new connection to the cluster's API
-    const connection = new Connection(clusterApiUrl("devnet"));
+    // create a new conexion to the cluster's API
+    const conexion = new Connection(clusterApiUrl("devnet"));
 
-    // initialize a keypair for the user
-    const user = await initializeKeypair(connection);
+    // initialize a keypair for the usuario
+    const usuario = await initializeKeypair(conexion);
 
-    console.log("PublicKey:", user.publicKey.toBase58());
+    console.log("PublicKey:", usuario.publicKey.toBase58());
 
     // metaplex set up
-    const metaplex = Metaplex.make(connection)
-        .use(keypairIdentity(user))
+    const metaplex = Metaplex.make(conexion)
+        .use(keypairIdentity(usuario))
         .use(
             bundlrStorage({
                 address: "https://devnet.bundlr.network",
@@ -308,22 +308,22 @@ async function uploadMetadata(
     metaplex: Metaplex,
     nftData: NftData,
 ): Promise<string> {
-    // file to buffer
+    // archivo to buffer
     const buffer = fs.readFileSync("src/" + nftData.imageFile);
 
-    // buffer to metaplex file
-    const file = toMetaplexFile(buffer, nftData.imageFile);
+    // buffer to metaplex archivo
+    const archivo = toMetaplexFile(buffer, nftData.imageFile);
 
     // upload image and get image uri
-    const imageUri = await metaplex.storage().upload(file);
-    console.log("image uri:", imageUri);
+    const uriDeImagen = await metaplex.storage().upload(archivo);
+    console.log("image uri:", uriDeImagen);
 
     // upload metadata and get metadata uri (off chain metadata)
     const { uri } = await metaplex.nfts().uploadMetadata({
         name: nftData.name,
         symbol: nftData.symbol,
         description: nftData.description,
-        image: imageUri,
+        image: uriDeImagen,
     });
 
     console.log("metadata uri:", uri);
@@ -431,8 +431,6 @@ Para actualizar un NFT existente, primero debemos cargar nuevos metadatos para e
 
 ```JavaScript
 async function main() {
-	...
-
   // upload updated NFT data and get the new URI for the metadata
   const updatedUri = await uploadMetadata(metaplex, updateNftData)
 
@@ -450,7 +448,7 @@ Transaction: https://explorer.solana.com/tx/5VkG47iGmECrqD11zbF7psaVqFkA4tz3iZar
 Finished successfully
 ```
 
-También puedes ver los NFTs en Phantom wallet importando la **PRIVATE_KEY** desde el archivo .env.
+También puedes ver los NFTs en Phantom billetera importando la **PRIVATE_KEY** desde el archivo .env.
 
 
 ## 8. Crear una colección de NFT
@@ -493,7 +491,7 @@ const collectionNftData = {
     sellerFeeBasisPoints: 100,
     imageFile: "success.png",
     isCollection: true,
-    collectionAuthority: user,
+    collectionAuthority: usuario,
 }
 ```
 
@@ -501,8 +499,6 @@ Ahora, llamemos a **uploadMetadata** con los **collectionNftData** y luego llame
 
 ```JavaScript
 async function main() {
-    ...
-
     // upload data for the collection NFT and get the URI for the metadata
     const collectionUri = await uploadMetadata(metaplex, collectionNftData)
 
