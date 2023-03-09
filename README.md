@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Solana Development Course
 
 ## About
@@ -96,3 +97,8 @@ General flow for making a contribution:
 ### Providing general feedback
 
 If you have feedback on content or suggestions for additional content, simply [create an issue](https://github.com/Unboxed-Software/solana-course/issues/new) explaining your feedback/suggestions.
+=======
+# Introducción a Solana
+
+Este curso está diseñado para ser el mejor punto de partida absoluto para los desarrolladores web que buscan aprender desarrollo Web3. Solana es la red ideal para iniciar tu viaje Web3 debido a su alta velocidad, bajo costo, eficiencia energética y más.
+>>>>>>> 8705d4e6cee64f216f2c2621bfe5afb4bbb1b704
