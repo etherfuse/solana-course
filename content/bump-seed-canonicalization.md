@@ -197,7 +197,7 @@ pub struct BumpSeed<'info> {
 pub struct VerifyAddress<'info> {
   #[account(
     seeds = [key.to_le_bytes().as_ref()],
-    // guranteed to be the canonical bump every time
+    //guaranteed to be the canonical bump every time
     bump = data.bump
   )]
   data: Account<'info, Data>,
