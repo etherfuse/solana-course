@@ -530,7 +530,7 @@ pub struct DeleteMovieReview<'info> {
 }
 ```
 
-Here we use the `close` constraint to specify we are closing the `movie_review` account and that the rent should be refunded to the `initializer` account. We also include the `seeds` and `bump` constraints for the the `movie_review` account for validation. Anchor then handles the additional logic required to securely close the account.
+Here we use the `close` constraint to specify we are closing the `movie_review` account and that the rent should be refunded to the `initializer` account. We also include the `seeds` and `bump` constraints for the `movie_review` account for validation. Anchor then handles the additional logic required to securely close the account.
 
 ### 6. Testing
 
