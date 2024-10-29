@@ -11,7 +11,7 @@
 # TL;DR
 
 - To generate a CPI, the target program must be passed into the invoking instruction as an account. This means that any target program could be passed into the instruction. Your program should check for incorrect or unexpected programs.
-- Perform program checks in native programs by simply comparing the public key of the passed-in program to the progam you expected.
+- Perform program checks in native programs by simply comparing the public key of the passed-in program to the program you expected.
 - If a program is written in Anchor, then it may have a publicly available CPI module. This makes invoking the program from another Anchor program simple and secure. The Anchor CPI module automatically checks that the address of the program passed in matches the address of the program stored in the module.
 
 # Overview

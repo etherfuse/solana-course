@@ -446,7 +446,7 @@ Note that Anchor specifies in the logs the account that causes the error (`Ancho
 ✔ Secure withdraw (10073ms)
 ```
 
-And just like that, you've closed up the security loophole. The theme across most of these potential exploits is that they're quite simple. However, as your programs grow in scope and complexity, it becomse increasingly easy to miss possible exploits. It's great to get in a habit of writing tests that send instructions that *shouldn't* work. The more the better. That way you catch problems before you deploy.
+And just like that, you've closed up the security loophole. The theme across most of these potential exploits is that they're quite simple. However, as your programs grow in scope and complexity, it becomes increasingly easy to miss possible exploits. It's great to get in a habit of writing tests that send instructions that *shouldn't* work. The more the better. That way you catch problems before you deploy.
 
 If you want to take a look at the final solution code you can find it on the `solution` branch of [the repository](https://github.com/Unboxed-Software/solana-account-data-matching/tree/solution).
 

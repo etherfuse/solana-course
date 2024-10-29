@@ -165,7 +165,7 @@ When the program you're calling is *not* an Anchor program, there are two possib
         amount,
     )?;
     ```
-2. If there is no helper module for the program whose instruction(s) you need to invoke, you can fall back to using `invoke` and `invoke_signed`. In fact, the source code of the `mint_to` helper function referenced above shows an example us using `invoke_signed` when given a `CpiContext`. You can follow a similar pattern if you decide to use an accounts struct and `CpiContext` to organize and prepare your CPI.
+2. If there is no helper module for the program whose instruction(s) you need to invoke, you can fall back to using `invoke` and `invoke_signed`. In fact, the source code of the `mint_to` helper function referenced above shows an example of us using `invoke_signed` when given a `CpiContext`. You can follow a similar pattern if you decide to use an accounts struct and `CpiContext` to organize and prepare your CPI.
     ```rust
     pub fn mint_to<'a, 'b, 'c, 'info>(
         ctx: CpiContext<'a, 'b, 'c, 'info, MintTo<'info>>,

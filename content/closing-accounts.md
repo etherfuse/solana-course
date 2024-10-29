@@ -297,7 +297,7 @@ You can theoretically repeat steps 1-2 infinitely until either a) the program ha
 
 ## 3. Create a `redeem_rewards_secure` instruction
 
-To prevent this from happening we're going to create a new instruction that closes the lottery account seucrely using the Anchor `close` constraint. Feel free to try this out on your own if you'd like.
+To prevent this from happening we're going to create a new instruction that closes the lottery account securely using the Anchor `close` constraint. Feel free to try this out on your own if you'd like.
 
 The new account validation struct called `RedeemWinningsSecure` should look like this:
 
